@@ -1,0 +1,8 @@
+package com.network.social.model;
+
+public class User {
+
+	int id;
+	String userName;
+	String password;
+}

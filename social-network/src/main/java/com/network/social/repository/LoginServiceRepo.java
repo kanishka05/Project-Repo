@@ -1,5 +1,5 @@
 package com.network.social.repository;
 
 public interface LoginServiceRepo {
-	public boolean loginValidationRepo();
+	public boolean loginValidationRepo(String userName,String password);
 }

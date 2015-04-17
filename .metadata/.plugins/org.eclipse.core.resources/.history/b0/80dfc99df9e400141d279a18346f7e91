@@ -1,0 +1,21 @@
+package com.network.social.repositoryImpl;
+
+import com.network.social.repository.LoginServiceRepo;
+
+
+public class LoginServiceRepoImpl implements LoginServiceRepo {
+
+	public boolean loginValidationRepo(String userName,String password){
+		System.out.println("in repo method");
+		if(userName.equals("user1") && password.equals("usre1")){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+		}
+		
+		
+	
+}
