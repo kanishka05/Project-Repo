@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
+
+import com.network.social.model.User;
 import com.network.social.serviceImpl.LoginServiceImpl;
 
 
@@ -24,6 +27,7 @@ LoginServiceImpl loginService=new LoginServiceImpl();
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String demoLogin(ModelMap model,@RequestParam String userName,@RequestParam String password){
 		System.out.println("login");
+		
 		boolean isUser=loginService.loginValidationService(userName,password);
 		String message=null;
 		

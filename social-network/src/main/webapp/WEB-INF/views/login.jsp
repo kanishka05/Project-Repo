@@ -34,6 +34,6 @@ function function1() {
 <td><input type="submit" id="submit" value="get in" onclick="function1()"/> </td>
 </tr>
 </table>
-
+<p> ${message} </p>
 </body>
 </html>

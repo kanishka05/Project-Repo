@@ -1,0 +1,13 @@
+package com.network.social.config;
+
+Configuration
+@EnableWebMvc
+@EnableTransactionManagement
+@ComponentScan("com.spr")
+@PropertySource("classpath:application.properties")
+@EnableJpaRepositories("com.spr.repository")
+public class Configuration {
+
+	
+	
+}

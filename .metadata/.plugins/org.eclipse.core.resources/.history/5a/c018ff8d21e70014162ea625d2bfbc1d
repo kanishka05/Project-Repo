@@ -1,0 +1,34 @@
+package com.network.social.repositoryImpl;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import com.network.social.model.User;
+import com.network.social.repository.LoginServiceRepo;
+
+
+public class LoginServiceRepoImpl implements LoginServiceRepo {
+
+	public boolean loginValidationRepo(String userName,String password){
+		System.out.println("in repo method");
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try{
+			Class.forName("com.mysql.jdbcDriver");
+			
+		}
+		catch(Exception e){
+			
+		}
+		/*User user=new User();
+		user.setUserName("user1");
+		user.setPassword("user1");
+		if(userName.equals(user.getUserName()) && password.equals(user.getPassword())){
+			return true;
+		}
+		else{
+			return false;
+		}*/
+		}
+}
