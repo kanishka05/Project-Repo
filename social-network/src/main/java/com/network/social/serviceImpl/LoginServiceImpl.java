@@ -9,12 +9,8 @@ public class LoginServiceImpl implements LoginService {
 	LoginServiceRepoImpl loginServiceRepo=new LoginServiceRepoImpl();
 	public boolean loginValidationService(String userName, String password) {
 		System.out.println("in service method");
-		boolean isUser=loginServiceRepo.loginValidationRepo(userName,userName);
-		if(isUser==true){
-		return isUser;
-		}
-		else{
-			return false;
-		}
+		
+		return this.loginServiceRepo.loginValidationRepo(userName, password);
+		
 	}
 }

@@ -2,14 +2,30 @@ package com.network.social.repositoryImpl;
 
 import java.sql.*;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
 import com.network.social.model.User;
 import com.network.social.repository.LoginServiceRepo;
 
 
 public class LoginServiceRepoImpl implements LoginServiceRepo {
 
+	
+	private SessionFactory sessionFactory;
+	
+	public void setSessionFactory(SessionFactory sf){
+        this.sessionFactory = sf;
+    }
+	
 	public boolean loginValidationRepo(String userName,String password){
-		System.out.println("in repo method");
+		Session session=this.sessionFactory.getCurrentSession();
+		User user=(User) session.createQuery("select * from user");
+		System.out.println("user is : "+user.getUserName());
+		System.out.println("in dao");
+		return true;
+		/*System.out.println("in repo method");
 		Connection conn = null;
 		Statement stmt = null;
 		
@@ -40,6 +56,6 @@ public class LoginServiceRepoImpl implements LoginServiceRepo {
 			System.out.println("caught exception : : : : : "+e);
 			return false;
 		}
-		return true;
+		return true;*/
 		}
 }
