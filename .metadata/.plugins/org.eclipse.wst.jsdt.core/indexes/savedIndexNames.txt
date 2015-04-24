@@ -1,7 +1,4 @@
 INDEX VERSION 1.3+D:\Project Repo\Project-Repo\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1572689745.index
-3828057077.index
-1618824592.index
+3689716249.index
 3431920442.index
-73775536.index
-3055802723.index
+4083329495.index

@@ -1,0 +1,18 @@
+package com.websystique.springmvc.dao;
+
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
+import org.hibernate.*;
+
+@Repository("LoginRepo")
+public class LoginRepoImpl implements LoginRepo {
+
+	
+	public boolean logintoRepo(String userName, String password) {
+		Query query=getSession()
+		return false;
+	}
+
+}

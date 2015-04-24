@@ -1,0 +1,37 @@
+package com.websystique.springmvc.dao;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
+
+import com.websystique.springmvc.model.User;
+
+@Repository("LoginRepo")
+public class LoginRepoImpl extends AbstractDao implements LoginRepo {
+
+	
+	public boolean logintoRepo(String userName, String password) {
+		System.out.println("in repo");
+		Query query=getSession().createSQLQuery("select * from user");
+		System.out.println("after query");
+		List<User> userList= new ArrayList<User>();
+		query.getFirstResult();
+		query.getFirstResult();
+		if(Integer.SIZE >0){
+			System.out.println("in repo if");
+			System.out.println("get first result");
+			System.out.println(query.toString());
+			return true;
+		}
+		
+		else{
+			System.out.println("in repo else");
+
+		return false;
+		}
+	}
+
+}

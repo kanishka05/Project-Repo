@@ -14,6 +14,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\New folder"/>
+			<item value="C:\Users\102112\Desktop\SpringMVC"/>
 			<item value="D:\Project Repo\Project-Repo\social-network"/>
 		</list>
 		<list key="projectNameTemplate">

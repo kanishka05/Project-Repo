@@ -8,7 +8,8 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	
 	<!-- <context:component-scan base-package="com.network.social.controller" /> -->
-	
+	 <context:component-scan base-package="com.network.social" />
+	 
 	<!-- Enables the Spring MVC @Controller programming model -->
  	<annotation-driven />
  
@@ -18,31 +19,28 @@
  
    <!-- Resolves views selected for rendering by @Controllers to .jsp resources 
         in the /WEB-INF/views directory -->
-	<bean:
+	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/views/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
-	</bean>
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+			
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>		
 	
-	<bean 
+	<beans:bean
 	 	class="org.apache.commons.dbcp.BasicDataSource" id="dataSource" destroy-method="close">
-	 	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-	 	<property name="url" value="jdbc:mysql://localhost:3306/social-network"></property>
-	 	<property name="username" value="root"></property>
-	 	<property name="password" value="root"></property>
-    </bean>
+	 	<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	 	<beans:property name="url" value="jdbc:mysql://localhost:3306/social-network" />
+	 	<beans:property name="username" value="root" />
+	 	<beans:property name="password" value="root" />
+    </beans:bean>	
     
      <!-- Hibernate 4 SessionFactory Bean definition -->
-    <beans:bean  id="hibernate4AnnotatedSessionFactory 
-    			  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-    	<beans:property name="dataSource" ref="dataSource"></beans:property>
-    	<beans:property name="annotedClasses">
+    <beans:bean  id="hibernate4AnnotatedSessionFactory"
+    			  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" >
+    	<beans:property name="dataSource" ref="dataSource" />
+    	<beans:property name="annotatedClasses">
     		<beans:list>
-    			<beans:value> com.network.social.model   </beans:value>
+    			<beans:value> com.network.social.model.User </beans:value>
     		</beans:list>
     	</beans:property>
     	<beans:property name="hibernateProperties">
@@ -53,15 +51,16 @@
     	</beans:property>
     </beans:bean>
     
-    <beans:bean id="dao" class="com.network.social.repositoryImpl">
+   <!--  <beans:bean id="dao" class="com.network.social.repositoryImpl">
+    											   
     	<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
     </beans:bean>
     
     <beans:bean id="service" class="com.network.social.serviceImpl">
         <beans:property name="dao" ref="dao"></beans:property>
     </beans:bean>
-	 
-	 <context:component-scan base-package="com.network.social.controller" />
+	  -->
+	
 	 
 	 <tx:annotation-driven transaction-manager="transactionManager"/>
 	 
