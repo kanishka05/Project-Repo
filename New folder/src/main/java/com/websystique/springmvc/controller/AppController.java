@@ -2,8 +2,12 @@ package com.websystique.springmvc.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,8 +15,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.websystique.springmvc.model.Employee;
+import com.websystique.springmvc.model.User;
 import com.websystique.springmvc.service.EmployeeService;
 
 @Controller
@@ -69,6 +75,40 @@ public class AppController {
 	public String deleteEmployee(@PathVariable String ssn) {
 		service.deleteEmployeeBySsn(ssn);
 		return "redirect:/list";
+	}
+	
+	@RequestMapping(value = "loginPage", method = RequestMethod.GET)
+	public String loginPage(ModelMap model){
+		return "login";
+	}
+	
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	public String login(ModelMap model,@RequestParam String userName,@RequestParam String password,HttpServletRequest request, HttpServletResponse response){
+		System.out.println("in login contrller");
+		HttpSession session = request.getSession();
+		boolean status=service.isUSer(userName,password);
+		//User user=new User();
+		if(status){
+			session.setAttribute("userName", userName);
+			String msg="Successfully logged in";
+			model.addAttribute("msg",msg);
+			return "homepage";
+		}
+		else{
+			String msg="Unable to logged in";
+			model.addAttribute("msg",msg);
+			return "login";
+		}
+	}
+	
+	@RequestMapping(value = "register", method = RequestMethod.POST)
+	public String register(ModelMap model,@RequestParam String fname,@RequestParam String lname,@RequestParam String email,@RequestParam String pass,@RequestParam String dateOb){
+		System.out.println("comiing here to register controller");
+		
+		service.addUser(fname,lname,email,pass,dateOb);
+		String msg="new user is added successfully";
+		model.addAttribute("msg",msg);
+		return "homepage"; 
 	}
 
 }

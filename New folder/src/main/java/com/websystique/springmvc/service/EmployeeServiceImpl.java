@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.websystique.springmvc.dao.EmployeeDao;
 import com.websystique.springmvc.model.Employee;
+import com.websystique.springmvc.model.User;
 
 @Service("employeeService")
 @Transactional
@@ -26,6 +27,21 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	public void deleteEmployeeBySsn(String ssn) {
 		dao.deleteEmployeeBySsn(ssn);
+	}
+	
+	public List<User> allUsers(){
+		System.out.println("in get all users service");
+		return dao.allUsers();
+	}
+	
+	public boolean isUSer(String userName,String password){
+		System.out.println("in login srvice");
+		 return dao.isUSer(userName,password);
+	}
+	
+	public void addUser(String fname,String lname,String email,String pass,String dateOb){
+		System.out.println("in add user service");
+		 dao.addUser(fname,lname,email,pass,dateOb);
 	}
 
 }

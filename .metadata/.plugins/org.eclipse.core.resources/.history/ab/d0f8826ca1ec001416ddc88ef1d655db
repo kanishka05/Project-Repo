@@ -1,0 +1,50 @@
+package com.websystique.springmvc.dao;
+
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
+
+import com.websystique.springmvc.model.Employee;
+
+
+
+	@Repository("loginRepo")
+	public class LoginRepoImpl extends AbstractDao implements LoginRepo{
+
+		/*public void saveEmployee(Employee employee) {
+			persist(employee);
+		}
+*/
+		@SuppressWarnings("unchecked")
+		public List<Employee> findAllEmployees() {
+			Criteria criteria = getSession().createCriteria(Employee.class);
+			return (List<Employee>) criteria.list();
+		}
+
+		public void deleteEmployeeBySsn(String ssn) {
+			Query query = getSession().createSQLQuery("delete from Employee where ssn = :ssn");
+			query.setString("ssn", ssn);
+			query.executeUpdate();
+		}
+
+		@Override
+		public boolean logintoRepo(String userName, String password) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+		return true;
+		
+	}
+	
+	/*public boolean logintoRepo(String userName, String password) {
+		System.out.println("in repo");
+		List<User> userList= new  ArrayList<User>();
+		Query query= (Query) getSession().createSQLQuery("select * from user where id=1");
+		System.out.println("after query");
+		return true;
+	}
+*/
+
