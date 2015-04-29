@@ -9,29 +9,12 @@ $(document).ready(function () {
 		alert("document.ready");
 });
 
-$(function(){
-function function1() {
-	alert("coming to function");
-	var userName=document.getElementById("userName").value;
-	alert(userName);
-	var password=document.getElementById("password").value;
-	alert(password);
-	window.location="login?userName="+userName+"&password="+password;
-}
-
-});
-
-
-
-
 </script>
-
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login here</title>
 </head>
 <body>
-
 <table>
 <tr>
 <td> UserName </td>
@@ -88,7 +71,9 @@ function function1() {
 
 </table>
 <p> ${msg}</p>
-
+<div id="div-text" ></div>
+<div id="div-profile"></div>
+<div id="div-logout"></div>
 
 <script type="text/javascript">
 function functionRegister(){
@@ -103,13 +88,71 @@ function functionRegister(){
 		url: "register",
 		data: {fname:fname,lname:lname,email:email,pass:pass,dateOb:dateOb},
 		success: function(data){
-			alert("here");
+			alert(data);
+			if(data=='success'){
+				$("#div-text").append(data);
+				$("#div-profile").append('<input type="submit" id="go-profile" value="Create Profile" onclick="createProfile()" />');
+				
+			}
 		},																					
 		error: function(e){
 			console.log( e);																				
 		} 
 	});  
 }
+
+function createProfile(){
+	alert("create profile");
+	$.ajax({
+		type: "GET",
+		url: "myProfile",
+		success: function(data){
+			window.location.href="myProfile" ;
+		}
+		
+	});
+	
+}
+
+function function1() {
+		alert("coming to function");
+		var userName=document.getElementById("userName").value;
+		alert(userName);
+		var password=document.getElementById("password").value;
+		alert(password);
+		$.ajax({
+			type: "POST",
+			url: "login",
+			data :{userName:userName,password:password},
+			success: function(data){
+				alert("login : : "+data);
+				if(data=='success'){
+					alert('in if');
+					window.location.href='homepage';
+				}
+				else{
+					alert('in else');
+					window.location.href='login';
+				}
+			}
+		});
+}
+
+function outProfile(){
+	alert("log out");
+	$.ajax({
+		type: "GET",
+		url: "logout",
+		success: function(data){
+			alert(data);
+			if(data=='success'){
+				alert('in log out if');
+				window.location.href="login" ;
+			}
+		}
+	});
+}
+
 </script>
 </body>
 </html>

@@ -10,6 +10,7 @@ public abstract class AbstractDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	
 	protected EntityManager entityManager;
 	
 	protected Session getSession(){
@@ -22,6 +23,11 @@ public abstract class AbstractDao {
 	
 	public void delete(Object entity) {
 		getSession().delete(entity);
+	}
+	
+	public void save(Object entity) {
+		getSession().save(entity);
+		
 	}
 	
 }

@@ -8,7 +8,7 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import com.websystique.springmvc.model.Employee;
-import com.websystique.springmvc.model.NewUser;
+import com.websystique.springmvc.model.User;
 import com.websystique.springmvc.model.User;
 
 @Repository("employeeDao")
@@ -45,10 +45,10 @@ public class EmployeeDaoImpl extends AbstractDao implements EmployeeDao{
 		list=(List<User>) criteria.list();
 		for(User user:list){
 			System.out.println("in for loop");
-			System.out.println("userName is :"+user.getUserName());
+			System.out.println("userName is :"+user.getEmail());
 			System.out.println("password is: "+user.getPassword());
-
-			if((user.getUserName()).equals(userName) && (user.getPassword()).equals(password)){
+			
+			if((user.getEmail()).equals(userName) && (user.getPassword()).equals(password)){
 				System.out.println("in repo if");
 				return true;
 			}
@@ -62,7 +62,7 @@ public class EmployeeDaoImpl extends AbstractDao implements EmployeeDao{
 	
 	public void addUser(String fname,String lname,String email,String pass,String dateOb){
 		System.out.println("in add user repo");
-		NewUser newuser=new NewUser();
+		User newuser=new User();
 		newuser.setPassword(pass);
 		newuser.setLastName(lname);
 		newuser.setFirstName(fname);
@@ -70,7 +70,7 @@ public class EmployeeDaoImpl extends AbstractDao implements EmployeeDao{
 		newuser.setDob(dateOb);
 		newuser.setUserId(1);
 		System.out.println("adding to the table");
-		persist(newuser);
+		save(newuser);
 		System.out.println("after adding to the table");
 		
 	}

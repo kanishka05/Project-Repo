@@ -11,25 +11,55 @@ import javax.persistence.Table;
 @Table(name="user")
 public class User {
 
-	int id;
-	String userName;
+	int userId;
+	String email;
 	String password;
+	String firstName;
+	String lastName;
+	String dob;
+	
+	
 	@Id
-	@Column(name = "id")
+	@Column(name = "userId")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	public int getId() {
-		return id;
+	public int getUserId(){
+		return userId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
-	@Column(name="userName")
-	public String getUserName() {
-		return userName;
+	
+	@Column(name = "email")
+	public String getEmail() {
+		return email;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	@Column(name = "firstName")
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	@Column(name = "lastName")
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	@Column(name = "dob")
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
 	
 	@Column(name="password")
@@ -39,5 +69,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	
 }

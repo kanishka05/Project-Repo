@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.websystique.springmvc.model.Employee;
 import com.websystique.springmvc.model.User;
@@ -82,33 +83,52 @@ public class AppController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login(ModelMap model,@RequestParam String userName,@RequestParam String password,HttpServletRequest request, HttpServletResponse response){
+	@RequestMapping(value = "login", method = RequestMethod.POST)
+	public @ResponseBody String login(ModelMap model,@RequestParam String userName,@RequestParam String password,HttpServletRequest request, HttpServletResponse response){
 		System.out.println("in login contrller");
 		HttpSession session = request.getSession();
 		boolean status=service.isUSer(userName,password);
 		//User user=new User();
 		if(status){
-			session.setAttribute("userName", userName);
+			//session.setAttribute("userName", userName);
 			String msg="Successfully logged in";
 			model.addAttribute("msg",msg);
-			return "homepage";
+			return "success";
 		}
 		else{
 			String msg="Unable to logged in";
 			model.addAttribute("msg",msg);
-			return "login";
+			return "failure";
 		}
 	}
 	
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public String register(ModelMap model,@RequestParam String fname,@RequestParam String lname,@RequestParam String email,@RequestParam String pass,@RequestParam String dateOb){
+	public @ResponseBody String register(ModelMap model,@RequestParam String fname,@RequestParam String lname,@RequestParam String email,@RequestParam String pass,@RequestParam String dateOb){
 		System.out.println("comiing here to register controller");
 		
 		service.addUser(fname,lname,email,pass,dateOb);
-		String msg="new user is added successfully";
-		model.addAttribute("msg",msg);
-		return "homepage"; 
+		return "success"; 
 	}
+	
+	@RequestMapping(value = "homepage", method = RequestMethod.GET)
+	public String homepage(ModelMap model){
+		return "homepage";
+	}
+	
+	@RequestMapping(value = "myProfile", method = RequestMethod.GET)
+	public String myProfile(){
+		return "myProfile";
+	}
+	
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	public @ResponseBody String logout(ModelMap model,HttpServletRequest request){
+		HttpSession session = request.getSession();
+		System.out.println("user in session is  : : :" +session.getAttribute("email"));
+		session.invalidate();
+		System.out.println("after closing the session   : : :" +session.getAttribute("email"));
+		return "success";
+	}
+
+	
 
 }
