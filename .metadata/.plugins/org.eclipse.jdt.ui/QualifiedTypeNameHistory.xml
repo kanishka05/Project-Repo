@@ -45,4 +45,5 @@
 <fullyQualifiedTypeName name="org.hibernate.SessionBuilder"/>
 <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.SessionAttributes"/>
 </qualifiedTypeNameHistroy>
