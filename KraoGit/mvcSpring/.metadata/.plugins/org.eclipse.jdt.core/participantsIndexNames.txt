@@ -1,0 +1,5 @@
+INDEX VERSION 1.127
+D:\KraoGit\KraoGit\mvcSpring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3927894054.index
+\SpringMVCBasic\src
+D:\KraoGit\KraoGit\mvcSpring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1273547151.index
+\SpringMVCBasic\src

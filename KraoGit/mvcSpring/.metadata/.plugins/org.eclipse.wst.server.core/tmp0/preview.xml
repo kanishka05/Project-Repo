@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="SpringMVCBasic" name="SpringMVCBasic" path="D:/KraoGit/KraoGit/mvcSpring/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/SpringMVCBasic" type="j2ee"/>
+</server>
