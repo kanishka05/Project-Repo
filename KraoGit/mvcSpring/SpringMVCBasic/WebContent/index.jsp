@@ -185,7 +185,9 @@
       </div>
 
       <footer>
-        <img src="http://colofts.ca/includes/images/icon-footer.svg" alt="">
+        <!-- <img src="http://colofts.ca/includes/images/icon-footer.svg" alt=""> -->
+        <img src="includes/images/freeiconmaker_0.png" alt="">
+        <img src="includes/images/freeiconmaker_8.png" alt="">
       </footer>
       <section class="credits">
         <a href="http://paper-leaf.com" target="_blank">SITE BY PAPERLEAF</a>
