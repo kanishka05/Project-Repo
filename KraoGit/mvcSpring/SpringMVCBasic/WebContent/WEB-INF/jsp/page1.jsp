@@ -45,31 +45,7 @@
 
     <section class="header mainWrapper">
       <div class="logo">
-        <!-- <img src="http://colofts.ca/includes/images/icon-hero.svg" alt=""> -->
-        <img src="includes/images/freeiconmaker_0.png" alt=""> 
-        <span "> 
-                <img src="includes/images/freeiconmaker_1.png" alt=""> 
-                <img src="includes/images/freeiconmaker_2.png" alt=""> 
-                <img src="includes/images/freeiconmaker_3.png" alt=""> 
-                <img src="includes/images/freeiconmaker_4.png" alt=""> 
-                <img src="includes/images/freeiconmaker_5.png" alt=""> 
-                <img src="includes/images/freeiconmaker_6.png" alt=""> 
-                <img src="includes/images/freeiconmaker_7.png" alt=""> 
-        </span>
-        </br>
-        <span>
-                        <img src="includes/images/freeiconmaker_8.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_9.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_10.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_11.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_12.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_13.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_14.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_15.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_16.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_17.png" alt=""> 
-        
-        </span>
+        <img src="http://colofts.ca/includes/images/icon-hero.svg" alt=""><span class="logotext typer"></span>
       </div>
       <a href="#socialInfo"><i class="fa fa-chevron-down"></i></a>
     </section>
@@ -80,7 +56,7 @@
       
       <nav>
         <div class="container">
-         <!--  <img src="http://colofts.ca/includes/images/logo-navbar.svg" alt=""> -->
+          <img src="http://colofts.ca/includes/images/logo-navbar.svg" alt="">
           <a class="navButton">Contact</a>
         </div>
       </nav>

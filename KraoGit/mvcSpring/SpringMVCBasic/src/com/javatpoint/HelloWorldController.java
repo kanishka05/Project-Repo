@@ -19,6 +19,7 @@ public class HelloWorldController {
 	}
 	
 
+
 	@RequestMapping(value = "index", method = RequestMethod.POST)
 	public @ResponseBody String showIndex(ModelMap model,@RequestParam String show){
 		System.out.println("coming to index controller");
@@ -26,7 +27,7 @@ public class HelloWorldController {
 	}
 	
 	@RequestMapping(value = "about", method = RequestMethod.GET)
-	public  String showAbout(ModelMap model){
+	public @ResponseBody  String showAbout(ModelMap model){
 		System.out.println("coming to about controller");
 		return "about";
 	}
@@ -55,5 +56,10 @@ public class HelloWorldController {
 		return "blog";
 	}
 	
+	@RequestMapping(value="page1",method=RequestMethod.GET)
+	public  String showPage1(ModelMap model){
+		System.out.println("in blog controller");
+		return "page1";
+	}
 }
 

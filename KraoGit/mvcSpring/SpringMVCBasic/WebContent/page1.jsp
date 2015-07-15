@@ -10,7 +10,7 @@
 
     <title>CoLofts | Creative Edmonton Offices</title>
 
-    <link rel="icon" type="image/png" href="http://colofts.ca/includes/images/favicon.ico">
+    <link rel="icon" type="image/png" href="includes/images/favicon.ico">
 
     <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -45,31 +45,7 @@
 
     <section class="header mainWrapper">
       <div class="logo">
-        <!-- <img src="http://colofts.ca/includes/images/icon-hero.svg" alt=""> -->
-        <img src="includes/images/freeiconmaker_0.png" alt=""> 
-        <span "> 
-                <img src="includes/images/freeiconmaker_1.png" alt=""> 
-                <img src="includes/images/freeiconmaker_2.png" alt=""> 
-                <img src="includes/images/freeiconmaker_3.png" alt=""> 
-                <img src="includes/images/freeiconmaker_4.png" alt=""> 
-                <img src="includes/images/freeiconmaker_5.png" alt=""> 
-                <img src="includes/images/freeiconmaker_6.png" alt=""> 
-                <img src="includes/images/freeiconmaker_7.png" alt=""> 
-        </span>
-        </br>
-        <span>
-                        <img src="includes/images/freeiconmaker_8.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_9.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_10.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_11.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_12.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_13.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_14.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_15.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_16.png" alt=""> 
-                        <img src="includes/images/freeiconmaker_17.png" alt=""> 
-        
-        </span>
+        <img src="includes/images/icon-hero.svg" alt=""><span class="logotext typer"></span>
       </div>
       <a href="#socialInfo"><i class="fa fa-chevron-down"></i></a>
     </section>
@@ -80,7 +56,7 @@
       
       <nav>
         <div class="container">
-         <!--  <img src="http://colofts.ca/includes/images/logo-navbar.svg" alt=""> -->
+          <img src="includes/images/logo-navbar.svg" alt="">
           <a class="navButton">Contact</a>
         </div>
       </nav>
@@ -117,7 +93,7 @@
       <div class="units">
         <div class="container">
           <div class="col-sm-12 col-md-9 text-left floorplan">
-            <img src="http://colofts.ca/includes/images/colofts_floorplan.svg" alt="">
+            <img src="includes/images/colofts_floorplan.svg" alt="">
           </div>
           <div class="col-sm-12 col-md-3 pull-right text-center">
             <hr>
@@ -159,10 +135,10 @@
           </div>
         </div>
         <div class="testimonialImage active paper">
-          <img src="http://colofts.ca/includes/images/paperleaf.jpg" alt="">
+          <img src="includes/images/paperleaf.jpg" alt="">
         </div>
         <div class="testimonialImage ped">
-          <img src="http://colofts.ca/includes/images/pedersen.jpg" alt="">
+          <img src="includes/images/pedersen.jpg" alt="">
         </div>
       </div>
 
@@ -185,7 +161,7 @@
       </div>
 
       <footer>
-        <img src="http://colofts.ca/includes/images/icon-footer.svg" alt="">
+        <img src="includes/images/icon-footer.svg" alt="">
       </footer>
       <section class="credits">
         <a href="http://paper-leaf.com" target="_blank">SITE BY PAPERLEAF</a>
